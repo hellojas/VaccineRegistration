@@ -4,6 +4,8 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=2.0" />
 	<base target="_top">
+  <?!= HtmlService.createHtmlOutputFromFile('CSS').getContent(); ?>
+
 </head>
 
 <body>
@@ -57,7 +59,8 @@
 		<li><a href='<?=url?>?page=email'>Email Testing</a></li>
 		<li><a href='<?=url?>?page=upload'>Upload Testing</a></li>
 		<li><a href='<?=url?>?page=consent'>Consent Form Testing - Docusign</a></li>
-	    <li><a href='<?=url?>?page=login'>Google Login Testing</a></li>
+    <li><a href='<?=url?>?page=dashboard'>Dashboard Testing</a></li>
+
 	</ul>
 
 

@@ -2,7 +2,7 @@ var profileData = null;
 var urlParameters = null;
 var appointmentData = null;
 
-var VALID_PAGES = ['appointments', 'register', 'lookup', 'camera', 'checkin', 'profile', 'barcode', 'questionaire', 'waitlist', 'consent', 'email','upload','insurance', 'login', 'logout'];
+var VALID_PAGES = ['appointments', 'register', 'lookup', 'camera', 'checkin', 'profile', 'barcode', 'questionaire', 'waitlist', 'consent', 'email','upload','insurance', 'login', 'logout', 'dashboard'];
 
 function doGet(e) {
 
@@ -73,13 +73,17 @@ function doPost(e){
 function routePage(page){
   if (VALID_PAGES.indexOf(page) == -1) {
     //default page
-    return HtmlService
-      .createTemplateFromFile('Index')
-      .evaluate();
+    var template = HtmlService.createTemplateFromFile('Index')
+    return template.evaluate()
+                .setTitle('Index')
+                  .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
+                .setSandboxMode(HtmlService.SandboxMode.IFRAME);
   }
-  return HtmlService
-    .createTemplateFromFile(page)
-    .evaluate();
+    var template = HtmlService.createTemplateFromFile(page)
+    return template.evaluate()
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
+                    .setSandboxMode(HtmlService.SandboxMode.IFRAME);
+
 }
 
 function test(){

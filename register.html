@@ -2,7 +2,9 @@
 <html>
 
 <head>
-	<base target="_top">
+	<base target="_self">
+  <?!= HtmlService.createHtmlOutputFromFile('CSS').getContent(); ?>
+
 </head>
 
 <body onload="onLoad()">
@@ -14,6 +16,7 @@
 		<input type="hidden" name="action" value="register">
     <input type="hidden" name="dose" value="1">
     <input type="hidden" name="ID" value="<?=profileData['ID']?>">
+    <input type="hidden" name="target" value="_parent">
 
 		<h2>Patient Information</h2>
 		(optional) Scan State ID Barcode: 

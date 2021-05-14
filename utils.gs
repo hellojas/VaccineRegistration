@@ -63,7 +63,9 @@ function getErrorObject() {
 
 function getScriptUrl() {
   var url = ScriptApp.getService().getUrl();
+  var url = "https://script.google.com/macros/s/AKfycbzFITETlCViw5o7_b5EhOjx5ZWLTNbGvQV4YrcOlUch/exec"
   return url;
+
 }
 
 
